@@ -13,6 +13,8 @@ spec:
       labels:
         run: dingtalk
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: 10.0.0.252
       containers:
       - name: dingtalk
         image: timonwong/prometheus-webhook-dingtalk:v0.3.0
