@@ -97,7 +97,7 @@ spec:
         - key: "CriticalAddonsOnly"
           operator: "Exists"
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/hostname: 10.0.0.252
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
