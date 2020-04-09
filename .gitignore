@@ -7,7 +7,7 @@ bin/*
 !bin/readme.md
 
 # ansible hosts
-hosts
+# hosts
 
 # k8s storage manifests 
 manifests/storage/*

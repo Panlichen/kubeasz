@@ -76,6 +76,6 @@
   shell: "{{ bin_dir }}/kubectl get pod -n kube-system -o wide|grep 'cilium'|grep ' {{ inventory_hostname }} '|awk '{print $3}'"
   register: pod_status
   until: pod_status.stdout == "Running"
-  retries: 15
+  retries: 50
   delay: 8
   ignore_errors: true

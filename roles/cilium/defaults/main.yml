@@ -5,7 +5,7 @@
 NODE_WITH_MULTIPLE_NETWORKS: "true"
 
 # 镜像版本
-cilium_ver: "v1.4.1"
+cilium_ver: "v1.7.2"
 
 # 离线镜像tar包
 cilium_offline: "cilium_{{ cilium_ver }}.tar"

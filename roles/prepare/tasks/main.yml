@@ -54,7 +54,7 @@
         line: 'source <(kubectl completion bash)'
 
     - name: 分发 kubeconfig配置文件
-      copy: src=/root/.kube/config dest=/root/.kube/config
+      copy: src=/home1/root/.kube/config dest=/root/.kube/config
 
     - name: 分发 kube-proxy.kubeconfig配置文件
       copy: src={{ base_dir }}/.cluster/kube-proxy.kubeconfig dest=/etc/kubernetes/kube-proxy.kubeconfig
