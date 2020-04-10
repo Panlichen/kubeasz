@@ -101,16 +101,22 @@ alertmanager:
   ## Node tolerations for alertmanager scheduling to nodes with taints
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
   ##
-  tolerations: []
+  tolerations: 
     # - key: "key"
     #   operator: "Equal|Exists"
     #   value: "value"
     #   effect: "NoSchedule|PreferNoSchedule|NoExecute(1.6 only)"
+    - key: "AcceptType"
+      operator: Equal
+      value: "SysTool"
+      effect: NoSchedule
+
 
   ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  nodeSelector: {}
+  nodeSelector: 
+    kubernetes.io/hostname: 10.0.0.252
 
   ## Pod affinity
   ##
@@ -288,16 +294,22 @@ kubeStateMetrics:
   ## Node tolerations for kube-state-metrics scheduling to nodes with taints
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
   ##
-  tolerations: []
+  tolerations: 
     # - key: "key"
     #   operator: "Equal|Exists"
     #   value: "value"
     #   effect: "NoSchedule|PreferNoSchedule|NoExecute(1.6 only)"
+    - key: "AcceptType"
+      operator: Equal
+      value: "SysTool"
+      effect: NoSchedule
 
-  ## Node labels for kube-state-metrics pod assignment
+
+  ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  nodeSelector: {}
+  nodeSelector: 
+    kubernetes.io/hostname: 10.0.0.252
 
   ## Annotations to be added to kube-state-metrics pods
   ##
@@ -396,13 +408,18 @@ nodeExporter:
   ## Node tolerations for node-exporter scheduling to nodes with taints
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
   ##
-  tolerations: []
+  tolerations: 
     # - key: "key"
     #   operator: "Equal|Exists"
     #   value: "value"
     #   effect: "NoSchedule|PreferNoSchedule|NoExecute(1.6 only)"
+    - key: "AcceptType"
+      operator: Equal
+      value: "SysTool"
+      effect: NoSchedule
 
-  ## Node labels for node-exporter pod assignment
+
+  ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
   nodeSelector: {}
@@ -561,16 +578,22 @@ server:
   ## Node tolerations for server scheduling to nodes with taints
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
   ##
-  tolerations: []
+  tolerations: 
     # - key: "key"
     #   operator: "Equal|Exists"
     #   value: "value"
     #   effect: "NoSchedule|PreferNoSchedule|NoExecute(1.6 only)"
+    - key: "AcceptType"
+      operator: Equal
+      value: "SysTool"
+      effect: NoSchedule
 
-  ## Node labels for Prometheus server pod assignment
+
+  ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  nodeSelector: {}
+  nodeSelector: 
+    kubernetes.io/hostname: 10.0.0.252
 
   ## Pod affinity
   ##
@@ -723,16 +746,22 @@ pushgateway:
   ## Node tolerations for pushgateway scheduling to nodes with taints
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
   ##
-  tolerations: []
+  tolerations: 
     # - key: "key"
     #   operator: "Equal|Exists"
     #   value: "value"
     #   effect: "NoSchedule|PreferNoSchedule|NoExecute(1.6 only)"
+    - key: "AcceptType"
+      operator: Equal
+      value: "SysTool"
+      effect: NoSchedule
 
-  ## Node labels for pushgateway pod assignment
+
+  ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  nodeSelector: {}
+  nodeSelector: 
+    kubernetes.io/hostname: 10.0.0.252
 
   ## Annotations to be added to pushgateway pods
   ##

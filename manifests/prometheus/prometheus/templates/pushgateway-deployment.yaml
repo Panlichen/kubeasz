@@ -10,6 +10,11 @@ metadata:
     release: {{ .Release.Name }}
   name: {{ template "prometheus.pushgateway.fullname" . }}
 spec:
+  selector:
+    matchLabels:
+      app: {{ template "prometheus.name" . }}
+      component: "{{ .Values.pushgateway.name }}"
+      release: {{ .Release.Name }}
   replicas: {{ .Values.pushgateway.replicaCount }}
   template:
     metadata:

@@ -1,0 +1,12 @@
+/opt/kube/bin/helm init \
+        --history-max 5 \
+        --tiller-tls \
+        --tiller-tls-verify \
+        --tiller-tls-cert /etc/kubernetes/ssl/tiller001.pem \
+        --tiller-tls-key /etc/kubernetes/ssl/tiller001-key.pem \
+        --tls-ca-cert /etc/kubernetes/ssl/ca.pem \
+        --service-account tiller \
+        --tiller-namespace kube-system \
+        --tiller-image  easzlab/tiller:v2.14.1\
+        --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts \
+        --upgrade --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' > tiller.yaml
