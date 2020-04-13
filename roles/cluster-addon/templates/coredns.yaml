@@ -58,7 +58,7 @@ data:
           lameduck 5s
         }
         ready
-        kubernetes {{ CLUSTER_DNS_DOMAIN }} in-addr.arpa ip6.arpa {
+        kubernetes cluster.local. in-addr.arpa ip6.arpa {
           pods insecure
           fallthrough in-addr.arpa ip6.arpa
         }
@@ -100,8 +100,6 @@ spec:
         operator: Equal
         value: "SysTool"
         effect: NoSchedule
-        
-          
       nodeSelector:
         kubernetes.io/hostname: 10.0.0.252
       affinity:
@@ -115,7 +113,7 @@ spec:
             topologyKey: kubernetes.io/hostname
       containers:
       - name: coredns
-        image: coredns/coredns:{{ corednsVer }}
+        image: coredns/coredns:1.6.6
         imagePullPolicy: IfNotPresent
         resources:
           limits:
@@ -184,7 +182,7 @@ metadata:
 spec:
   selector:
     k8s-app: kube-dns
-  clusterIP: {{ CLUSTER_DNS_SVC_IP }}
+  clusterIP: 10.68.0.2
   ports:
   - name: dns
     port: 53
