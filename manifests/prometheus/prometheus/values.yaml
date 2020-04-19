@@ -501,11 +501,11 @@ server:
   global:
     ## How frequently to scrape targets by default
     ##
-    scrape_interval: 1m
+    scrape_interval: 2s
     ## How long until a scrape request times out
     ##
-    scrape_timeout: 10s
-    ## How frequently to evaluate rules
+    scrape_timeout: 1s
+    ## How frequently to evaluate rules -- for alert
     ##
     evaluation_interval: 1m
 
