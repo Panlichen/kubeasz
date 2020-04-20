@@ -1,3 +1,9 @@
+---
+note:
+    createdAt: 2020-04-09T06:10:21.171Z
+    modifiedAt: 2020-04-20T08:25:50.837Z
+    tags: []
+---
 # 06-安装cilium网络组件
 
 `cilium` 是一个革新的网络与安全组件；基于 linux 内核新技术--`BPF`，它可以透明、零侵入地实现服务间安全策略与可视化，主要优势如下：
@@ -49,7 +55,7 @@ service/kubernetes   ClusterIP   10.68.0.1       <none>        443/TCP   5h
 每个 POD 在 `cilium` 中都表示为 `Endpoint`，初始每个 `Endpoint` 的”进出安全策略“状态均为 `Disabled`，如下：(已省略部分无关 POD 信息)
 
 ``` bash
-$ kubectl exec -n kube-system cilium-6t5vx -- cilium endpoint list
+$ kubectl exec -n kube-system cilium-9jvcx -- cilium endpoint list
 ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])                                    IPv6                  IPv4           STATUS   
            ENFORCEMENT        ENFORCEMENT                                                                                                                      
 643        Disabled           Disabled          31371      k8s:class=deathstar                                            f00d::ac14:0:0:283    172.20.0.246   ready   
@@ -76,9 +82,9 @@ ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=v
 当然“死星”应该只允许“帝国”的飞船着陆，因为没有应用任何策略，所以初始状态下“帝国”和“联盟”的飞船都可以登陆，如下测试：
 
 ``` bash
-$ kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+$ kubectl -n starwars exec xwing -- curl -s -XPOST deathstar.starwars.svc.cluster.local/v1/request-landing
 Ship landed # 成功着陆
-$ kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+$ kubectl -n starwars exec tiefighter -- curl -s -XPOST deathstar.starwars.svc.cluster.local/v1/request-landing
 Ship landed # 成功着陆
 ```
 
@@ -91,10 +97,10 @@ Ship landed # 成功着陆
 根据文件[sw_l3_l4_policy.yaml](../../../roles/cilium/files/star_war_example/sw_l3_l4_policy.yaml) 创建 `$ kubectl apply -f sw_l3_l4_policy.yaml` 后，验证如下：
 
 ``` bash
-$ kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+$ kubectl -n starwars exec tiefighter -- curl -s -XPOST deathstar.starwars.svc.cluster.local/v1/request-landing
 Ship landed # 成功着陆
 
-$ kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+$ kubectl -n starwars exec xwing -- curl -s -XPOST deathstar.starwars.svc.cluster.local/v1/request-landing
 # 失败超时
 ```
 
@@ -103,7 +109,7 @@ $ kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/re
 再次执行 `cilium endpoint list`，可以看到标签带`deathstar`的 POD 已经应用了 `Ingress`方向的策略：
 
 ``` bash
-# kubectl exec -n kube-system cilium-6t5vx -- cilium endpoint list
+# kubectl exec -n kube-system cilium-9jvcx -- cilium endpoint list
 ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])                                    IPv6                  IPv4           STATUS   
            ENFORCEMENT        ENFORCEMENT                                                                                                                      
 643        Enabled            Disabled          31371      k8s:class=deathstar                                            f00d::ac14:0:0:283    172.20.0.246   ready   
@@ -134,7 +140,7 @@ ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=v
 没有限制飞船请求权限时，如下运行：
 
 ``` bash
-$ kubectl exec tiefighter -- curl -s -XPUT deathstar.default.svc.cluster.local/v1/exhaust-port
+$ kubectl -n starwars exec tiefighter -- curl -s -XPUT deathstar.starwars.svc.cluster.local/v1/exhaust-port
 Panic: deathstar exploded
 
 goroutine 1 [running]:
@@ -151,9 +157,9 @@ main.main()
 限制L7 的安全策略，根据文件[sw_l3_l4_l7_policy.yaml](../../../roles/cilium/files/star_war_example/sw_l3_l4_l7_policy.yaml) 创建 `$ kubectl apply -f sw_l3_l4_l7_policy.yaml` 后，验证如下：
 
 ``` bash
-$ kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+$ kubectl -n starwars exec tiefighter -- curl -s -XPOST deathstar.starwars.svc.cluster.local/v1/request-landing
 Ship landed
-$ kubectl exec tiefighter -- curl -s -XPUT deathstar.default.svc.cluster.local/v1/exhaust-port
+$ kubectl -n starwars exec tiefighter -- curl -s -XPUT deathstar.starwars.svc.cluster.local/v1/exhaust-port
 Access denied
 ```
 
