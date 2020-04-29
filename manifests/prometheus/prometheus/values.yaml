@@ -496,7 +496,7 @@ server:
 
   ## This flag controls access to the administrative HTTP API which includes functionality such as deleting time
   ## series. This is disabled by default.
-  enableAdminApi: false
+  enableAdminApi: ture
 
   global:
     ## How frequently to scrape targets by default
@@ -587,6 +587,15 @@ server:
       operator: Equal
       value: "SysTool"
       effect: NoSchedule
+    # node.kubernetes.io/disk-pressure:NoSchedule
+    - key: "node.kubernetes.io/disk-pressure"
+      operator: Equal
+      value: "True"
+    #   effect: NoExecute
+    # - key: node.kubernetes.io/disk-pressure
+    #   operator: Equal
+    #   value: True
+    #   effect: NoSchedule
 
 
   ## Node labels for alertmanager pod assignment
@@ -691,7 +700,7 @@ server:
 
   ## Prometheus data retention period (i.e 360h)
   ##
-  retention: ""
+  retention: "1d"
 
 pushgateway:
   ## If false, pushgateway will not be installed

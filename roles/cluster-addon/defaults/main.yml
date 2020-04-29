@@ -1,5 +1,5 @@
 # # dns 自动安装，'dns_backend'可选"coredns"和“kubedns”
-dns_install: "no"
+dns_install: "yes"
 dns_backend: "coredns"
 # 设置 dns svc ip (这里选用 SERVICE_CIDR 中第2个IP)
 CLUSTER_DNS_SVC_IP: "{{ SERVICE_CIDR | ipaddr('net') | ipaddr(2) | ipaddr('address') }}"
@@ -27,7 +27,7 @@ dashboardMetricsScraperVer: "v1.0.3"
 metricsscraper_offline: "metrics-scraper_{{ dashboardMetricsScraperVer }}.tar"
 
 # ingress 自动安装，可选 "traefik" 和 "nginx-ingress"
-ingress_install: "no"
+ingress_install: "yes"
 ingress_backend: "traefik"
 traefikVer: "v1.7.20"
 nginxingVer: "0.21.0"
@@ -46,5 +46,5 @@ metallb_vip_pool: "192.168.1.240/29"
 #efk_install: "no"
 
 # # prometheus 自动安装
-prometheus_install: "no"
+prometheus_install: "yes"
 
