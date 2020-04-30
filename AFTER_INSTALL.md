@@ -1,12 +1,22 @@
 ---
 note:
     createdAt: 2020-04-29T02:59:38.076Z
-    modifiedAt: 2020-04-29T06:25:23.656Z
+    modifiedAt: 2020-04-30T03:25:09.342Z
     tags: []
 ---
 ### 安装之后需要给252加taint
   `/etc/ansible/label-taint-252.sh`
   
+### 拉取业务镜像
+```bash
+/home1/root/DeathStarBench/tools/pull-docker-image.sh
+```
+
+### 部署ex-lb
+```bash
+ansible-playbook /etc/ansible/roles/ex-lb/ex-lb.yml
+kubectl create -f /etc/ansible/manifests/ingress/traefik/traefik-ui.ing.yaml
+```
 ### 安装结束之后需要手动装的插件
   
 #### helm
@@ -27,7 +37,7 @@ note:
    # only when change config
    /home1/root/DeathStarBench/deploy-hubble/install/kubernetes/gen-yaml.sh
    
-   kk apply -f /home1/root/DeathStarBench/deploy-hubble/install/kubernetes/install-hubble.yaml
+   kk apply -f  ansible-playbook /etc/ansible/roles/ex-lb/ex-lb.yml
    ```
    
 

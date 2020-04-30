@@ -148,6 +148,10 @@ data:
   # for prometheus, as said in 
   # examples/kubernetes/addons/prometheus/README.md
   prometheus-serve-addr: ":9090"
+
+  # from https://github.com/cilium/cilium/issues/10627#issuecomment-601703116
+  # otherwise Cilium will derive a pod CIDR for the node which might conflict with podCIDRs from other nodes.
+  k8s-require-ipv4-pod-cidr: "true"
 ---
 # Source: cilium/charts/agent/templates/clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1
