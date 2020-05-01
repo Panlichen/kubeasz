@@ -37,7 +37,7 @@ kubectl create -f /etc/ansible/manifests/ingress/traefik/traefik-ui.ing.yaml
    # only when change config
    /home1/root/DeathStarBench/deploy-hubble/install/kubernetes/gen-yaml.sh
    
-   kk apply -f  ansible-playbook /etc/ansible/roles/ex-lb/ex-lb.yml
+   kk apply -f /home1/root/DeathStarBench/deploy-hubble/install/kubernetes/install-hubble.yaml
    ```
    
 

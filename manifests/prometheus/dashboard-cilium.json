@@ -47,7 +47,7 @@
   "gnetId": 6658,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1587297561862,
+  "iteration": 1588306099663,
   "links": [],
   "panels": [
     {
@@ -87,84 +87,84 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.1:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.1:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "A"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.11:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.11:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "B"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.12:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.12:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "C"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.13:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.13:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "D"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.14:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.14:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "E"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.21:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.21:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "J"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.22:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.22:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "K"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.23:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.23:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "L"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.3:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.3:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "M"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.4:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.4:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "N"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.5:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.5:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
           "refId": "O"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.8:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.8:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{ direction }}",
@@ -248,77 +248,77 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.24:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.24:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "B"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.25:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.25:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "C"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.26:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.26:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "E"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.27:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.27:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "F"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.29:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.29:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "G"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.30:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.30:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "I"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.31:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.31:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "J"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.32:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.32:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "K"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.33:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.33:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "L"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.17:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.17:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
           "refId": "A"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.18:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.18:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{ instance }}-{{direction}}",
@@ -402,84 +402,84 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.34:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.34:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "B"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.35:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.35:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "C"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.36:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.36:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "D"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.37:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.37:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "E"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.39:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.39:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "F"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.40:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.40:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "H"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.41:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.41:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "I"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.43:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.43:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "J"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.45:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.45:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "K"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.19:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.19:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "A"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.20:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.20:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
           "refId": "G"
         },
         {
-          "expr": "delta(cilium_forward_count_total{pod_template_generation=\"4\",instance=\"10.0.0.47:9090\"}[4s])",
+          "expr": "delta(cilium_forward_count_total{instance=\"10.0.0.47:9090\"}[4s])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{direction}}",
@@ -1593,5 +1593,5 @@
   "timezone": "utc",
   "title": "Cilium Metric",
   "uid": "N55d4IqZz",
-  "version": 18
+  "version": 7
 }
