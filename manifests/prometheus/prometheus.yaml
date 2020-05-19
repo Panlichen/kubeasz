@@ -726,8 +726,8 @@ spec:
             - name: config-volume
               mountPath: /etc/config
               readOnly: true
-      nodeSelector:
-        kubernetes.io/hostname: 10.0.0.252
+      # nodeSelector:
+        # kubernetes.io/hostname: 10.0.0.252
         
       tolerations:
         - effect: NoSchedule
@@ -779,8 +779,8 @@ spec:
           resources:
             {}
             
-      nodeSelector:
-        kubernetes.io/hostname: 10.0.0.252
+      # nodeSelector:
+        # kubernetes.io/hostname: 10.0.0.252
         
       tolerations:
         - effect: NoSchedule
@@ -878,8 +878,8 @@ spec:
             - name: storage-volume
               mountPath: /data
               subPath: ""
-      nodeSelector:
-        kubernetes.io/hostname: 10.0.0.252
+      # nodeSelector:
+        # kubernetes.io/hostname: 10.0.0.252
         
       tolerations:
         - effect: NoSchedule

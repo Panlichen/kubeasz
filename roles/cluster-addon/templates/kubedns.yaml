@@ -67,8 +67,8 @@ spec:
       labels:
         k8s-app: kube-dns
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: 10.0.0.252
+      # nodeSelector:
+        # kubernetes.io/hostname: 10.0.0.252
       priorityClassName: system-cluster-critical
       tolerations:
       - key: "CriticalAddonsOnly"

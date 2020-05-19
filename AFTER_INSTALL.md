@@ -4,8 +4,9 @@ note:
     modifiedAt: 2020-04-30T03:25:09.342Z
     tags: []
 ---
-### 安装之后需要给252加taint
-  `/etc/ansible/label-taint-252.sh`
+~~### 安装之后需要给252加taint~~
+
+  ~~`/etc/ansible/label-taint-252.sh`~~
   
 ### 拉取业务镜像
 ```bash

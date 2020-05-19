@@ -226,8 +226,8 @@ spec:
         - name: tmp-volume
           emptyDir: {}
       serviceAccountName: kubernetes-dashboard
-      nodeSelector:
-        kubernetes.io/hostname: 10.0.0.252
+      # nodeSelector:
+      #   kubernetes.io/hostname: 10.0.0.252
       # Comment the following tolerations if Dashboard must not be deployed on master
       tolerations:
         - key: node-role.kubernetes.io/master
@@ -293,8 +293,8 @@ spec:
             runAsUser: 1001
             runAsGroup: 2001
       serviceAccountName: kubernetes-dashboard
-      nodeSelector:
-        kubernetes.io/hostname: 10.0.0.252
+      # nodeSelector:
+      #   kubernetes.io/hostname: 10.0.0.252
       # Comment the following tolerations if Dashboard must not be deployed on master
       tolerations:
         - key: node-role.kubernetes.io/master
