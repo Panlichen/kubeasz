@@ -16,3 +16,6 @@ INGRESS_TLS_NODEPORT_LB: "yes"
 
 # 离线安装 haproxy+keepalived (offline|online)
 INSTALL_SOURCE: "online"
+
+# 根据kube-node的情况决定haproxy配置文件中用来指定nodeport lb的节点的情况
+KUBE_NODE_INFO: "slot1"  # 3 4 5 8 11 12 13 14

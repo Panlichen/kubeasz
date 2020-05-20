@@ -10,8 +10,8 @@
 # work node(s)
 [kube-node]
 10.0.0.3
-10.0.0.5
 10.0.0.4
+10.0.0.5
 10.0.0.8
 10.0.0.11
 10.0.0.12
@@ -49,6 +49,7 @@
 #192.168.1.8 HARBOR_DOMAIN="harbor.yourdomain.com" NEW_INSTALL=no SELF_SIGNED_CERT=yes
 
 # [optional] loadbalance for accessing k8s from outside
+# 10.0.0.1 has 11G mem; 10.0.0.3 has 3.8G mem
 [ex-lb]
 10.0.0.1 LB_ROLE=master EX_APISERVER_VIP=10.0.0.66 EX_APISERVER_PORT=8443
 # 10.0.0.3 LB_ROLE=master EX_APISERVER_VIP=10.0.0.66 EX_APISERVER_PORT=8443

@@ -32,10 +32,12 @@ listen ingress-node
         option dontlognull
         option dontlog-normal
         balance {{ BALANCE_ALG }}
-{% if groups['kube-node']|length > 3 %}
-        server {{ groups['kube-node'][0] }} {{ groups['kube-node'][0] }}:31010 check inter 5s fall 2 rise 2 weight 1
-        server {{ groups['kube-node'][1] }} {{ groups['kube-node'][1] }}:31010 check inter 5s fall 2 rise 2 weight 1
-        server {{ groups['kube-node'][2] }} {{ groups['kube-node'][2] }}:31010 check inter 5s fall 2 rise 2 weight 1
+{% if KUBE_NODE_INFO == "slot1" %}
+        server {{ groups['kube-node'][3] }} {{ groups['kube-node'][3] }}:31010 check inter 5s fall 2 rise 2 weight 2
+        server {{ groups['kube-node'][4] }} {{ groups['kube-node'][4] }}:31010 check inter 5s fall 2 rise 2 weight 4
+        server {{ groups['kube-node'][5] }} {{ groups['kube-node'][5] }}:31010 check inter 5s fall 2 rise 2 weight 5
+        server {{ groups['kube-node'][6] }} {{ groups['kube-node'][6] }}:31010 check inter 5s fall 2 rise 2 weight 5
+        server {{ groups['kube-node'][7] }} {{ groups['kube-node'][7] }}:31010 check inter 5s fall 2 rise 2 weight 3
 {% else %}
 {% for host in groups['kube-node'] %}
         server {{ host }} {{ host }}:31010 check inter 5s fall 2 rise 2 weight 1
