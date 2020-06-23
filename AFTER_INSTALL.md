@@ -7,13 +7,18 @@ note:
 ~~### 安装之后需要给252加taint~~
 
   ~~`/etc/ansible/label-taint-252.sh`~~
-  
+
+[TOC]
+
 ### 拉取业务镜像
 ```bash
 /home1/root/DeathStarBench/tools/pull-docker-image.sh
 ```
 
 ### 部署ex-lb
+
+安装之前需要看看/etc/ansible/roles/ex-lb/defaults/main.yml和/etc/ansible/roles/ex-lb/templates/haproxy.cfg.j2的配置
+
 ```bash
 ansible-playbook /etc/ansible/roles/ex-lb/ex-lb.yml
 kubectl create -f /etc/ansible/manifests/ingress/traefik/traefik-ui.ing.yaml
@@ -80,3 +85,34 @@ kubectl apply -f /home1/root/DeathStarBench/deploy-jaeger/crds/jaeger-all-in-one
 - [Auto-injecting Jaeger Agent Sidecars](https://www.jaegertracing.io/docs/1.17/operator/#auto-injecting-jaeger-agent-sidecars)
 - [Deployment Strategies](https://www.jaegertracing.io/docs/1.17/operator/#deployment-strategies)
 - [Storage options](https://www.jaegertracing.io/docs/1.17/operator/#storage-options)
+
+### 外部访问k8s
+使用[frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
+
+在master(master此时充当的是frp的client)上:
+```bash
+nohup /etc/ansible/frp/frpc -c /etc/ansible/frp/frpc.ini 2>&1 >/etc/ansible/frp/runfrp.err & 
+# 最好放到/etc/rc.local里开机启动
+```
+
+在frp的server上
+```bash
+nohup /home/poanpan/frp/frps -c /home/poanpan/frp/frps.ini 2>&1 >/home/poanpan/frp/runfrp.err &
+# 最好放到/etc/rc.local里开机启动
+# frps.ini的内容也很简单:
+[common]
+bind_port = 13680
+```
+
+接下来在frp的server上,编辑.kube/config:
+```bash
+# 其他主要内容从master复制过来
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: ...
+    server: https://127.0.0.1:16643
+  name: cluster1
+contexts:
+  ...
+```

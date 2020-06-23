@@ -1,0 +1,5 @@
+nohup jupyter lab 2>&1 > jupyter.log &
+
+#sleep 100
+#nohup /home/zczhang/bin/frp/frpc -c /home/zczhang/bin/frp/frpc.ini 2>&1 >/home/zczhang/bin/runfrp.err &
+#ssh -R 7001:localhost:7022 zczhang@39.107.247.3 -f -N
