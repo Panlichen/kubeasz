@@ -106,7 +106,10 @@ bind_port = 13680
 
 接下来在frp的server上,编辑.kube/config:
 ```bash
-# 其他主要内容从master复制过来
+# 其他主要内容从master复制过来:
+scp -r -P 36800 -i .ssh/lcpan .kube poanpan@162.105.146.121:~ 
+
+# 编辑后.kube/config长这样:
 apiVersion: v1
 clusters:
 - cluster:
