@@ -1,8 +1,7 @@
 ---
-note:
-    createdAt: 2020-04-29T02:59:38.076Z
-    modifiedAt: 2020-04-30T03:25:09.342Z
-    tags: []
+tags: []
+created: 2020-04-29T02:59:38.076Z
+modified: 2020-06-30T01:47:36.093Z
 ---
 ~~### 安装之后需要给252加taint~~
 
@@ -36,6 +35,9 @@ kubectl create -f /etc/ansible/manifests/ingress/traefik/traefik-ui.ing.yaml
    cd /etc/ansible/manifests/prometheus
    /etc/ansible/manifests/prometheus/prometheus-install.sh
    /etc/ansible/manifests/prometheus/grafana-install.sh
+
+   # 创建prometheus的ingress(通过prometheus.test.com访问)
+   kk apply -f /etc/ansible/manifests/prometheus/prometheus-ingress.yaml 
    ```
 #### hubble
    ```bash
@@ -46,8 +48,6 @@ kubectl create -f /etc/ansible/manifests/ingress/traefik/traefik-ui.ing.yaml
    kk apply -f /home1/root/DeathStarBench/deploy-hubble/install/kubernetes/install-hubble.yaml
    ```
    
-
-
 
 #### Deploy jaeger
 
@@ -86,10 +86,25 @@ kubectl apply -f /home1/root/DeathStarBench/deploy-jaeger/crds/jaeger-all-in-one
 - [Deployment Strategies](https://www.jaegertracing.io/docs/1.17/operator/#deployment-strategies)
 - [Storage options](https://www.jaegertracing.io/docs/1.17/operator/#storage-options)
 
+
+### ingress配置及负载均衡访问
+参考[ex-lb配置转发 ingress nodePort](https://github.com/Panlichen/kubeasz/blob/master/docs/op/loadballance_ingress_nodeport.md)和[Ingress配置](https://github.com/Panlichen/kubeasz/blob/master/docs/guide/ingress.md)。
+主要原理是通过NodePort暴露traefik-ingress-service，然后ex-lb配置对nodePort的负载均衡访问，不至于只从一个节点访问nodeport服务，造成性能瓶颈。k8s集群内部的一个服务的ingress在部署的时候可以选择暴露一个域名（或者其他暴露方式），访问的时候直接访问这个域名，需要在访问者上修改`/etc/hosts`文件，例如
+```
+# for HAproxy NodePort Forwarding
+10.0.0.1 traefik-ui.test.com
+10.0.0.1 sn-nginx.test.com
+10.0.0.1 media-nginx.test.com
+10.0.0.1 prometheus.test.com
+```
+流量会先到达ex-lb节点，导向到对应的traefik-ingress-service，然后再根据ingress里指定的域名和后端的对应关系真正走到后端服务。
+
+
+
 ### 外部访问k8s
 使用[frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
-在master(master此时充当的是frp的client)上:
+在kube-master(kube-master此时充当的是frp的client)上:
 ```bash
 nohup /etc/ansible/frp/frpc -c /etc/ansible/frp/frpc.ini 2>&1 >/etc/ansible/frp/runfrp.err & 
 # 最好放到/etc/rc.local里开机启动
@@ -106,7 +121,7 @@ bind_port = 13680
 
 接下来在frp的server上,编辑.kube/config:
 ```bash
-# 其他主要内容从master复制过来:
+# 其他主要内容从kube-master复制过来:
 scp -r -P 36800 -i .ssh/lcpan .kube poanpan@162.105.146.121:~ 
 
 # 编辑后.kube/config长这样:

@@ -1,3 +1,7 @@
-2020/06/23 15:43:32 [1;34m[I] [service.go:257] [f7a79a7c03f40e23] login to server success, get run id [f7a79a7c03f40e23], server udp port [0][0m
-2020/06/23 15:43:32 [1;34m[I] [proxy_manager.go:144] [f7a79a7c03f40e23] proxy added: [k8s][0m
-2020/06/23 15:43:32 [1;34m[I] [control.go:179] [f7a79a7c03f40e23] [k8s] start proxy success[0m
+2020/06/30 12:32:52 [1;34m[I] [service.go:257] [48547dc8cc057c55] login to server success, get run id [48547dc8cc057c55], server udp port [0][0m
+2020/06/30 12:32:52 [1;34m[I] [proxy_manager.go:144] [48547dc8cc057c55] proxy added: [prometheus hublle-ui k8s ex-lb transport grafana][0m
+2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [prometheus] start proxy success[0m
+2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [hublle-ui] start proxy success[0m
+2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [k8s] start proxy success[0m
+2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [ex-lb transport] start proxy success[0m
+2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [grafana] start proxy success[0m

@@ -1,8 +1,7 @@
 ---
-note:
-    createdAt: 2020-04-09T06:10:21.171Z
-    modifiedAt: 2020-04-20T08:25:50.837Z
-    tags: []
+tags: []
+created: 2020-04-09T06:10:21.171Z
+modified: 2020-04-20T08:25:50.837Z
 ---
 # 06-安装cilium网络组件
 
