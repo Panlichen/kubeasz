@@ -1,7 +1,16 @@
-2020/06/30 12:32:52 [1;34m[I] [service.go:257] [48547dc8cc057c55] login to server success, get run id [48547dc8cc057c55], server udp port [0][0m
-2020/06/30 12:32:52 [1;34m[I] [proxy_manager.go:144] [48547dc8cc057c55] proxy added: [prometheus hublle-ui k8s ex-lb transport grafana][0m
-2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [prometheus] start proxy success[0m
-2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [hublle-ui] start proxy success[0m
-2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [k8s] start proxy success[0m
-2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [ex-lb transport] start proxy success[0m
-2020/06/30 12:32:52 [1;34m[I] [control.go:179] [48547dc8cc057c55] [grafana] start proxy success[0m
+2020/06/30 15:42:30 [1;34m[I] [service.go:257] [521f5b9cb2e1cdb0] login to server success, get run id [521f5b9cb2e1cdb0], server udp port [0][0m
+2020/06/30 15:42:30 [1;34m[I] [proxy_manager.go:144] [521f5b9cb2e1cdb0] proxy added: [hublle-ui traefic-admin jaeger k8s ex-lb transport grafana prometheus][0m
+2020/06/30 15:42:30 [1;34m[I] [control.go:179] [521f5b9cb2e1cdb0] [prometheus] start proxy success[0m
+2020/06/30 15:42:30 [1;34m[I] [control.go:179] [521f5b9cb2e1cdb0] [traefic-admin] start proxy success[0m
+2020/06/30 15:42:30 [1;34m[I] [control.go:179] [521f5b9cb2e1cdb0] [k8s] start proxy success[0m
+2020/06/30 15:42:30 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:42:30 [1;34m[I] [control.go:179] [521f5b9cb2e1cdb0] [grafana] start proxy success[0m
+2020/06/30 15:42:30 [1;34m[I] [control.go:179] [521f5b9cb2e1cdb0] [ex-lb transport] start proxy success[0m
+2020/06/30 15:42:30 [1;34m[I] [control.go:179] [521f5b9cb2e1cdb0] [hublle-ui] start proxy success[0m
+2020/06/30 15:43:03 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:43:36 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:44:06 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:44:39 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:45:12 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:45:42 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
+2020/06/30 15:46:12 [1;33m[W] [control.go:177] [521f5b9cb2e1cdb0] [jaeger] start error: port unavailable[0m
