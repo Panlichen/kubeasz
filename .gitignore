@@ -23,6 +23,3 @@ roles/cluster-backup/files/*
 
 # cluster backups
 .cluster/
-
-# frp log
-runfrp.err
