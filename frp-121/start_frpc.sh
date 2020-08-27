@@ -1,0 +1,1 @@
+nohup /etc/ansible/frp-121/frpc -c /etc/ansible/frp-121/frpc.ini 2>&1 >/etc/ansible/frp-121/runfrp.err & 
