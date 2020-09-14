@@ -1,0 +1,8 @@
+easzlab/tiller:v2.14.1
+grafana/grafana:5.2.4
+jaegertracing/jaeger-operator:1.17.1
+jimmidyson/configmap-reload:v0.2.2
+prom/alertmanager:v0.15.2
+prom/prometheus:v2.4.3
+quay.io/cilium/hubble-ui:latest
+jaegertracing/all-in-one:1.17.1

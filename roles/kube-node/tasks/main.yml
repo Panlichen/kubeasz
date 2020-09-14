@@ -97,7 +97,7 @@
   shell: "{{ bin_dir }}/kubectl get node {{ inventory_hostname }}|awk 'NR>1{print $2}'"
   register: node_status
   until: node_status.stdout == "Ready" or node_status.stdout == "Ready,SchedulingDisabled"
-  retries: 8 
+  retries: 50 
   delay: 8
   tags: upgrade_k8s, restart_node
 

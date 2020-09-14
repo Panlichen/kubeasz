@@ -1,0 +1,15 @@
+redis:alpine
+poanpan/social-network-microservices-local-jaeger:v0.0.1
+yg397/media-frontend:xenial
+poanpan/memcached:v1
+poanpan/mongo:v1
+yg397/openresty-thrift:xenial
+poanpan/rabbitmq:v1
+poanpan/media-microservices-local-jaeger:v0.0.1
+poanpan/derecho-dev:v1
+jaegertracing/jaeger-operator:1.17.1
+jaegertracing/all-in-one:1.17.1
+poanpan/ubuntu:16.04
+
+askeysnip/spark:v1.1.3
+askeysnip/spark-py:v1.1.3
