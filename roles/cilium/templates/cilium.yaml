@@ -571,8 +571,8 @@ spec:
         io.cilium/app: operator
         name: cilium-operator
     spec:
-      # nodeSelector: 
-        # kubernetes.io/hostname: 10.0.0.252
+      nodeSelector: 
+        node.life: longlive
       tolerations:
       - key: "AcceptType"
         operator: Equal

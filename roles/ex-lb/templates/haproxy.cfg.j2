@@ -33,11 +33,10 @@ listen ingress-node
         option dontlog-normal
         balance {{ BALANCE_ALG }}
 {% if groups['kube-node']|length >= 5 %}
-        server {{ groups['kube-node'][0] }} {{ groups['kube-node'][0] }}:31010 check inter 5s fall 2 rise 2 weight 2
-        server {{ groups['kube-node'][1] }} {{ groups['kube-node'][1] }}:31010 check inter 5s fall 2 rise 2 weight 4
-        server {{ groups['kube-node'][2] }} {{ groups['kube-node'][2] }}:31010 check inter 5s fall 2 rise 2 weight 5
-        server {{ groups['kube-node'][3] }} {{ groups['kube-node'][3] }}:31010 check inter 5s fall 2 rise 2 weight 5
-        server {{ groups['kube-node'][4] }} {{ groups['kube-node'][4] }}:31010 check inter 5s fall 2 rise 2 weight 3
+        server 10.0.0.11 10.0.0.11:31010 check inter 5s fall 2 rise 2 weight 2
+        server 10.0.0.12 10.0.0.12:31010 check inter 5s fall 2 rise 2 weight 5
+        server 10.0.0.13 10.0.0.13:31010 check inter 5s fall 2 rise 2 weight 3
+        server 10.0.0.14 10.0.0.14:31010 check inter 5s fall 2 rise 2 weight 3
 {% else %}
 {% for host in groups['kube-node'] %}
         server {{ host }} {{ host }}:31010 check inter 5s fall 2 rise 2 weight 1
@@ -54,9 +53,10 @@ listen ingress-node-tls
         option dontlog-normal
         balance {{ BALANCE_ALG }}
 {% if groups['kube-node']|length > 3 %}
-        server {{ groups['kube-node'][0] }} {{ groups['kube-node'][0] }}:23457 check inter 5s fall 2 rise 2 weight 1
-        server {{ groups['kube-node'][1] }} {{ groups['kube-node'][1] }}:23457 check inter 5s fall 2 rise 2 weight 1
-        server {{ groups['kube-node'][2] }} {{ groups['kube-node'][2] }}:23457 check inter 5s fall 2 rise 2 weight 1
+        server 10.0.0.11 10.0.0.11:23457 check inter 5s fall 2 rise 2 weight 2
+        server 10.0.0.12 10.0.0.12:23457 check inter 5s fall 2 rise 2 weight 5
+        server 10.0.0.13 10.0.0.13:23457 check inter 5s fall 2 rise 2 weight 3
+        server 10.0.0.14 10.0.0.14:23457 check inter 5s fall 2 rise 2 weight 3
 {% else %}
 {% for host in groups['kube-node'] %}
         server {{ host }} {{ host }}:23457 check inter 5s fall 2 rise 2 weight 1

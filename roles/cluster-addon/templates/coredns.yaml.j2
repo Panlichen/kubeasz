@@ -102,8 +102,8 @@ spec:
         effect: NoSchedule
         
           
-      # nodeSelector:
-        # kubernetes.io/hostname: 10.0.0.252
+      nodeSelector:
+        node.life: longlive
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

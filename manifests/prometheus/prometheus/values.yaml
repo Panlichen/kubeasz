@@ -115,8 +115,8 @@ alertmanager:
   ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  # nodeSelector: 
-    # kubernetes.io/hostname: 10.0.0.252
+  nodeSelector: 
+    node.life: longlive
 
   ## Pod affinity
   ##
@@ -308,8 +308,8 @@ kubeStateMetrics:
   ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  # nodeSelector: 
-    # kubernetes.io/hostname: 10.0.0.252
+  nodeSelector: 
+    node.life: longlive
 
   ## Annotations to be added to kube-state-metrics pods
   ##
@@ -601,8 +601,8 @@ server:
   ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  # nodeSelector: 
-    # kubernetes.io/hostname: 10.0.0.252
+  nodeSelector: 
+    node.life: longlive
 
   ## Pod affinity
   ##
@@ -769,8 +769,8 @@ pushgateway:
   ## Node labels for alertmanager pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  # nodeSelector: 
-    # kubernetes.io/hostname: 10.0.0.252
+  nodeSelector: 
+    node.life: longlive
 
   ## Annotations to be added to pushgateway pods
   ##

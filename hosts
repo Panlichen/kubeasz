@@ -1,11 +1,11 @@
 # 'etcd' cluster should have odd member(s) (1,3,5,...)
 # variable 'NODE_NAME' is the distinct name of a member in 'etcd' cluster
 [etcd]
-10.0.0.11 NODE_NAME=10.0.0.11
+10.0.0.12 NODE_NAME=10.0.0.12
 
 # master node(s)
 [kube-master]
-10.0.0.11
+10.0.0.12
 
 # work node(s)
 [kube-node]
@@ -18,7 +18,7 @@
 # 10.0.0.5
 10.0.0.8
 10.0.0.252
-10.0.0.12
+10.0.0.11
 10.0.0.13
 10.0.0.14
 10.0.0.47
@@ -61,7 +61,7 @@
 
 # [optional] ntp server for the cluster
 [chrony]
-10.0.0.11
+10.0.0.12
 
 [all:vars]
 # --------- Main Variables ---------------

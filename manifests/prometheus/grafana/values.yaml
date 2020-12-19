@@ -85,8 +85,8 @@ resources: {}
 ## Node labels for pod assignment
 ## ref: https://kubernetes.io/docs/user-guide/node-selection/
 #
-# nodeSelector:
-#   kubernetes.io/hostname: 10.0.0.252
+nodeSelector:
+node.life: longlive
 
 ## Tolerations for pod assignment
 ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
